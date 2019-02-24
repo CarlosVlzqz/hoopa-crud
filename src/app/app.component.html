@@ -1,0 +1,26 @@
+<nav>
+  <div>
+  </div>
+  <button type="button" class="btn btn-info" (click)="toggleModal()">Añadir item</button>
+</nav>
+<div class="container">
+  <div class="row">
+    <div class="col-md-8 col-md-offset-2">
+      <div class="panel panel-default">
+          <h2>Campañas</h2>
+          <p>Lista de campañas</p>
+          <app-modal 
+            [showmodal] = "displaymodal" 
+            [id] = "editId"
+            (close)="toggleModal()" 
+            (submit)="handleSubmit($event)"></app-modal>
+          <app-table 
+            [headers] = "tableheaders" 
+            [data]="tabledata" 
+            (delete)="handleDelete($event)"
+            (edit)="handleEdit($event)"></app-table>
+      </div>
+    </div>
+  </div>
+</div>
+
