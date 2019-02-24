@@ -26,10 +26,7 @@ export class ModalComponent {
   }
   dispatchSubmit() {
     const {title, description, startDate, endDate, status, id} = this
-    if(!title || !description || !startDate || !endDate) {
-      alert('Todos los campos son requeridos')
-      return
-    }
+    
     this.submit.emit({
         title,
         description,
@@ -38,16 +35,10 @@ export class ModalComponent {
         status,
         id
     })
-    this.resetData()
+    
     this.close.emit(null)
   }
-  resetData() {
-    this.title = null
-    this.description = null
-    this.startDate = null
-    this.endDate = null
-    this.status = null
-  }
+
   dispatchCloseEvent() {
     this.close.emit(null)
   }

@@ -13,12 +13,14 @@
             [showmodal] = "displaymodal" 
             [id] = "editId"
             (close)="toggleModal()" 
-            (submit)="handleSubmit($event)"></app-modal>
+            (submit)="handleSubmit($event)">    
+          </app-modal>
           <app-table 
             [headers] = "tableheaders" 
             [data]="tabledata" 
             (delete)="handleDelete($event)"
-            (edit)="handleEdit($event)"></app-table>
+            (edit)="handleEdit($event)">
+          </app-table>
       </div>
     </div>
   </div>
